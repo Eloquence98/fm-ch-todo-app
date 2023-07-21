@@ -337,7 +337,7 @@ ul .footer {
 /* SCROLL */
 .scroll-bar {
   overflow-y: scroll;
-  max-height: 40.6vh;
+  /* max-height: 40.9vh; */
   border-style: none;
 }
 /* Scrollbar Styling */

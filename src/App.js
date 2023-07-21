@@ -5,16 +5,10 @@ function App() {
   const [width, setWidth] = useState(true)
 
   const windowWidth = window.screen.width
-  function handleWidthChange() {
-    if (windowWidth > 560) setWidth(true)
-    if (windowWidth <= 560) setWidth(false)
-  }
 
   useEffect(() => {
     windowWidth <= 560 ? setWidth(false) : setWidth(true)
   }, [windowWidth])
-
-  window.addEventListener('resize', handleWidthChange)
 
   return (
     <>
