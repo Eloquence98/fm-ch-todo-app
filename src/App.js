@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Todo from './components/Todo'
 
 function App() {
+  const [width, setWidth] = useState(true)
+
+  const windowWidth = window.screen.width
+  function handleWidthChange() {
+    if (windowWidth > 560) setWidth(true)
+    if (windowWidth <= 560) setWidth(false)
+  }
+
+  useEffect(() => {
+    windowWidth <= 560 ? setWidth(false) : setWidth(true)
+  }, [windowWidth])
+
+  window.addEventListener('resize', handleWidthChange)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className='bg'></div>
+      <div className='app'>
+        <Todo width={width} />
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
