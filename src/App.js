@@ -1,14 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import Todo from './components/Todo'
 
-function App() {
-  const [width, setWidth] = useState(true)
+function debounce(fn, ms) {
+  let timer
+  return (_) => {
+    clearTimeout(timer)
+    timer = setTimeout((_) => {
+      timer = null
+      fn.apply(this, arguments)
+    }, ms)
+  }
+}
 
-  const windowWidth = window.screen.width
+function App() {
+  const [width, setWidth] = useState(window.innerWidth <= 560 ? false : true)
 
   useEffect(() => {
-    windowWidth <= 560 ? setWidth(false) : setWidth(true)
-  }, [windowWidth])
+    const debouncedHandleResize = debounce(function handleResize() {
+      setWidth(window.innerWidth <= 560 ? false : true)
+    }, 100)
+
+    window.addEventListener('resize', debouncedHandleResize)
+
+    return (_) => {
+      window.removeEventListener('resize', debouncedHandleResize)
+    }
+  }, [])
 
   return (
     <>
