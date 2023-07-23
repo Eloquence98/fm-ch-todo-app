@@ -1,6 +1,6 @@
 # Frontend Mentor - Todo app
 
-![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Todo app coding challenge](https://github.com/Eloquence98/legendary-eureka/assets/94260380/f4e0be73-ec68-4e4a-b9c8-fc224b0d9d50)
 
 ## Welcome! 👋
 
