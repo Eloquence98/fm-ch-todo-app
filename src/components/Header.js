@@ -3,18 +3,18 @@ import { ReactComponent as Moon } from '../svgs/icon-moon.svg'
 import { ReactComponent as Sun } from '../svgs/icon-sun.svg'
 
 function Header() {
-  const [them, setThem] = useState(false)
+  const [theme, setTheme] = useState(false)
 
   useEffect(() => {
-    if (them) document.body.className = 'dark'
-    if (!them) document.body.className = ''
-  }, [them])
+    if (theme) document.body.className = 'dark'
+    if (!theme) document.body.className = ''
+  }, [theme])
 
   return (
     <header className='header'>
       <h1>TODO</h1>
-      <button onClick={() => setThem(!them)}>
-        {them ? <Sun /> : <Moon />}
+      <button onClick={() => setTheme(!theme)}>
+        {theme ? <Sun /> : <Moon />}
       </button>
     </header>
   )
