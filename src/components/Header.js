@@ -3,7 +3,7 @@ import { ReactComponent as Moon } from '../svgs/icon-moon.svg'
 import { ReactComponent as Sun } from '../svgs/icon-sun.svg'
 
 function Header() {
-  const [theme, setTheme] = useState(false)
+  const [theme, setTheme] = useState(true)
 
   useEffect(() => {
     if (theme) document.body.className = 'dark'

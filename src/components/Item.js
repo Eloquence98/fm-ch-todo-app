@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { ReactComponent as Cross } from '../svgs/icon-cross.svg'
+import React, { useEffect, useState } from 'react';
+import { ReactComponent as Cross } from '../svgs/icon-cross.svg';
 
 function Item({
   item,
@@ -10,15 +10,15 @@ function Item({
   onDragEnd,
   width,
 }) {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
   function handleHover(value) {
-    if (!width) return
-    value === 'left' ? setHover(false) : setHover(true)
+    if (!width) return;
+    value === 'left' ? setHover(false) : setHover(true);
   }
 
   useEffect(() => {
-    width ? setHover(false) : setHover(true)
-  }, [width])
+    width ? setHover(false) : setHover(true);
+  }, [width]);
   return (
     <li
       onMouseEnter={() => handleHover(item)}
@@ -49,7 +49,7 @@ function Item({
         </button>
       )}
     </li>
-  )
+  );
 }
 
-export default Item
+export default Item;
